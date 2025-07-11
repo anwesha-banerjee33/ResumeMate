@@ -5,7 +5,7 @@ document.getElementById('resumeForm').addEventListener('submit', async (e) => {
   const formData = new FormData(form);
 
   try {
-    const response = await fetch('http://localhost:5000/api/analyze', {
+    const response = await fetch('http://localhost:5000/api/upload', {
       method: 'POST',
       body: formData
     });

@@ -2,9 +2,14 @@ const express = require('express');
 const multer = require('multer');
 const { analyzeResume } = require('../controllers/resumeController');
 
+const upload = multer({ dest: 'uploads/' });  
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' });
 
-router.post('/analyze', upload.single('resumeFile'), analyzeResume);
+router.get('/', (req, res) => {
+  res.send('ResumeMate API is working');
+});
+
+
+router.post('/upload', upload.single('resume'), analyzeResume);
 
 module.exports = router;

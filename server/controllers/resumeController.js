@@ -1,9 +1,9 @@
 const fs = require('fs');
 const pdfParser = require('../utils/pdfParser');
 const docxParser = require('../utils/docxParser');
-const { analyzeWithAI } = require('../utils/aiPrompt');
+const { getAIFeedback } = require('../utils/aiPrompt');
 
-exports.analyzeResume = async (req, res) => {
+const analyzeResume = async (req, res) => {
   try {
     let extractedText = '';
 
@@ -25,7 +25,7 @@ exports.analyzeResume = async (req, res) => {
       return res.status(400).json({ error: 'No resume provided.' });
     }
 
-    const feedback = await analyzeWithAI(extractedText);
+    const feedback = await getAIFeedback(extractedText);
     res.json({ feedback });
 
   } catch (err) {
@@ -33,3 +33,4 @@ exports.analyzeResume = async (req, res) => {
     res.status(500).json({ error: 'Something went wrong.' });
   }
 };
+module.exports = {analyzeResume};
