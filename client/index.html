@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ResumeMate - AI Resume Analyzer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script> <!-- Free icons -->
+</head>
+<body class="bg-gradient-to-r from-indigo-100 via-blue-100 to-purple-100 min-h-screen flex items-center justify-center font-sans">
+
+  <div class="bg-white shadow-2xl rounded-3xl p-10 max-w-2xl w-full animate-fadeIn">
+    
+    <div class="text-center mb-6">
+      <i class="ph ph-file-text text-indigo-500 text-6xl"></i>
+      <h1 class="text-4xl font-extrabold text-indigo-600 mt-2">ResumeMate</h1>
+      <p class="text-gray-600 mt-2">Your AI-powered career companion for smart resume reviews & job guidance.</p>
+    </div>
+
+    <form id="resumeForm" enctype="multipart/form-data" class="space-y-6">
+
+      <div>
+        <label class="block text-left text-gray-700 font-medium mb-2">Upload Resume (PDF or DOCX)</label>
+        <input type="file" name="resumeFile" accept=".pdf,.docx" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm">
+      </div>
+
+      <div class="relative">
+        <label class="block text-left text-gray-700 font-medium mb-2">Or Paste Google Drive Link</label>
+        <input type="url" name="driveLink" placeholder="https://drive.google.com/..." class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm">
+        <i class="ph ph-link text-gray-400 absolute right-4 top-11"></i>
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-semibold py-3 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+        <i class="ph ph-magic-wand mr-2"></i> Analyze My Resume
+      </button>
+    </form>
+
+    <div id="result" class="mt-8 bg-gray-50 rounded-lg p-4 text-sm text-gray-800 whitespace-pre-wrap shadow-inner hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.6s ease-out both;
+    }
+  </style>
+</body>
+</html>
