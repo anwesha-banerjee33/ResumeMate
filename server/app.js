@@ -1,5 +1,5 @@
 require('dotenv').config();
-console.log(" .env file loaded. API KEY:", process.env.OPENAI_API_KEY);
+console.log("Loaded HF API Key:", process.env.HF_API_KEY); 
 const express = require('express');
 const cors = require('cors');
 const resumeRoutes = require('./routes/resumeRoutes');
