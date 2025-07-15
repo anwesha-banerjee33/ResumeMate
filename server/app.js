@@ -1,5 +1,4 @@
 require('dotenv').config();
-console.log("Loaded HF API Key:", process.env.HF_API_KEY); 
 const express = require('express');
 const cors = require('cors');
 const resumeRoutes = require('./routes/resumeRoutes');
@@ -10,7 +9,7 @@ const PORT = process.env.PORT || 5000 ;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); 
+//app.use(express.urlencoded({ extended: true })); 
 app.use('/api', resumeRoutes);
 app.get('/', (req, res) => {
   res.send('ResumeMate Server is Running!');
