@@ -1,8 +1,8 @@
-# ResumeMate 🎯
+# ResumeMate 
 
 **ResumeMate** is a free, AI-powered resume analyzer and job recommendation platform. Upload your resume, and get instant, intelligent feedback and job suggestions — powered by open-source models.
 
-## 🚀 Features
+## Features
 
 - 📄 Upload resumes in PDF or DOCX format
 - 🔍 Resume text extraction and parsing
@@ -10,7 +10,7 @@
 - 💼 Job recommendations based on your skills and experience
 - 🔐 Secure: your data stays local, and `.env` keys are hidden
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript (Vanilla)
 - **Backend:** Node.js + Express
